@@ -10,7 +10,6 @@
         "fruitcake/laravel-cors": "^1.0",
         "illuminate/redis": "^5.8",
         "laravel/lumen-framework": "5.8.*",
-        "laravel/socialite": "^4.3",
         "predis/predis": "^1.1",
         "socialiteproviders/etsy": "^3.0",
         "tymon/jwt-auth": "1.0.0-rc.4",

@@ -21,7 +21,7 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-$app->withFacades();
+$app->withFacades(true, []);
 $app->withEloquent();
 
 $app->configure('database');
@@ -29,6 +29,7 @@ $app->configure('auth');
 $app->configure('cache');
 $app->configure('api');
 $app->configure('cors');
+$app->configure('services');
 
 /*
 |--------------------------------------------------------------------------
@@ -88,7 +89,6 @@ $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 $app->register(\Fruitcake\Cors\CorsServiceProvider::class);
-$app->register(Laravel\Socialite\SocialiteServiceProvider::class);
 $app->register(\SocialiteProviders\Manager\ServiceProvider::class);
 
 /*
