@@ -7,7 +7,6 @@ $api->version('v1', [
 ], function ($api) {
     $api->group([
         'namespace' => 'Api\Shop\V1\Controllers',
-        'prefix' => 'systems',
     ], function ($api) {
         $api->resource('shop', 'ShopsController');
     });
