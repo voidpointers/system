@@ -9,9 +9,14 @@ use Shop\Entities\Shop;
 
 class ShopsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = Shop::where(['status' => 1])->get();
+        $columns = $request->input('columns', '*');
+        if ('few' == $columns) {
+            $columns = ['shop_id', 'shop_name'];
+        }
+
+        $data = Shop::where(['status' => 1])->get($columns);
 
         return $this->response->collection(
             $data,
