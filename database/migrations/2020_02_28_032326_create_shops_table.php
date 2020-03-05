@@ -27,8 +27,8 @@ class CreateShopsTable extends Migration
             $table->string('icon')->default('')->comment('店铺图标');
             $table->string('consumer_key')->default('')->comment('请求令牌');
             $table->string('consumer_secret')->default('')->comment('请求密钥');
-            $table->string('oauth_token')->default('')->comment('授权访问token');
-            $table->string('oauth_secret')->default('')->comment('授权密钥');
+            $table->string('access_token')->default('')->comment('授权访问token');
+            $table->string('access_secret')->default('')->comment('授权密钥');
             $table->tinyInteger('status')->unsigned()->default(0)->comment('状态');
             $table->integer('create_time')->unsigned()->default(0)->comment('创建时间');
             $table->integer('update_time')->unsigned()->default(0)->comment('更新时间');
