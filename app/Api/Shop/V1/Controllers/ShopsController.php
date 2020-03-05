@@ -11,9 +11,11 @@ class ShopsController extends Controller
 {
     public function index(Request $request)
     {
-        $columns = $request->input('columns', '*');
-        if ('few' == $columns) {
-            $columns = ['shop_id', 'shop_name'];
+        $query = $request->input('query', '');
+
+        $columns = ['*'];
+        if ('few' == $query) {
+            $columns = ['shop_id', 'shop_name', 'user_id', 'username', 'icon'];
         }
 
         $data = Shop::where(['status' => 1])->get($columns);
