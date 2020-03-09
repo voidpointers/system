@@ -13,6 +13,6 @@ $api->version('v1', [
     $api->group([
         'namespace' => 'Api\File\V1\Controllers',
     ], function ($api) {
-        $api->post('upload', 'FilesController');
+        $api->post('upload', 'FilesController@fileUpload');
     });
 });
