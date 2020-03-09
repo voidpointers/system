@@ -10,4 +10,9 @@ $api->version('v1', [
     ], function ($api) {
         $api->resource('shop', 'ShopsController');
     });
+    $api->group([
+        'namespace' => 'Api\File\V1\Controllers',
+    ], function ($api) {
+        $api->post('upload', 'FilesController');
+    });
 });
