@@ -24,7 +24,7 @@ class FilesController extends Controller
         // 生成新的统一格式的文件名
         $file = md5($file_name . time() . mt_rand(1, 10000)) . '.' . $extension;
         // 图片保存路径
-        $save_path = 'images/' . $file;
+        $save_path = '/images/' . $file;
 
         // 将文件保存到本地 storage/app/public/images 目录下，先判断同名文件是否已经存在，如果存在直接返回
         if (Storage::disk('public')->has($save_path)) {
