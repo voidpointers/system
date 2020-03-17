@@ -17,8 +17,8 @@ class ShopTransformer extends TransformerAbstract
     public function includeDeclare($shop)
     {
         return $this->item(
-            $shop->declare,
-            DeclareTransformer::class,
+            $shop->declare ?? null,
+            new DeclareTransformer,
             'include'
         );
     }
