@@ -7,7 +7,7 @@ use Shop\Entities\Shop;
 
 class ShopTransformer extends TransformerAbstract
 {
-    // protected $defaultIncludes = ['declare'];
+    protected $defaultIncludes = ['declare'];
 
     public function transform(Shop $shop)
     {
