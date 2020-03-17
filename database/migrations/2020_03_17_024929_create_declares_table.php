@@ -19,6 +19,8 @@ class CreateDeclaresTable extends Migration
             $table->decimal('price', 10, 2)->unsigned()->default(0)->comment('价格');
             $table->float('weight', 10 ,2)->unsigned()->default(0)->comment('重量');
             $table->tinyInteger('quantity')->unsigned()->default(0)->comment('数量');
+            $table->string('name', 120)->default('')->comment('申报英文名');
+            $table->string('name_zh')->default('')->comment('申报中文名');
         });
     }
 
