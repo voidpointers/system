@@ -20,7 +20,12 @@ class ShopsController extends Controller
             $columns = ['shop_id', 'shop_name', 'user_id', 'username', 'icon'];
         }
 
-        $data = Shop::where(['status' => 1])->get($columns);
+        $query = Shop::query()->where(['status' => 1]);
+        if ($columns) {
+            $data = $query->get($columns);
+        } else {
+            $data = $query->get();
+        }
 
         return $this->response->collection(
             $data,
