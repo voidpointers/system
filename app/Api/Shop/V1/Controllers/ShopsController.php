@@ -9,23 +9,16 @@ use Shop\Entities\Shop;
 
 class ShopsController extends Controller
 {
-    protected $hidden = ['access_token', 'access_secret'];
-
     public function index(Request $request)
     {
         $query = $request->input('query', '');
 
-        $columns = [];
+        $columns = ['*'];
         if ('few' == $query) {
             $columns = ['shop_id', 'shop_name', 'user_id', 'username', 'icon'];
         }
 
-        $query = Shop::query()->where(['status' => 1]);
-        if ($columns) {
-            $data = $query->get($columns);
-        } else {
-            $data = $query->get();
-        }
+        $data = Shop::where(['status' => 1])->get($columns);
 
         return $this->response->collection(
             $data,
