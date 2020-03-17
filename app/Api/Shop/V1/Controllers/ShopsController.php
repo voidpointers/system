@@ -15,7 +15,7 @@ class ShopsController extends Controller
     {
         $query = $request->input('query', '');
 
-        $columns = ['*'];
+        $columns = [];
         if ('few' == $query) {
             $columns = ['shop_id', 'shop_name', 'user_id', 'username', 'icon'];
         }
