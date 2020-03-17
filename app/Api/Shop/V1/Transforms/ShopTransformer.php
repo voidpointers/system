@@ -18,7 +18,7 @@ class ShopTransformer extends TransformerAbstract
     {
         return $this->item(
             $shop->declare,
-            ShopTransformer::class,
+            DeclareTransformer::class,
             'include'
         );
     }
