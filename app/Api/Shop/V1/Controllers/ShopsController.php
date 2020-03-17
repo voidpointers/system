@@ -9,6 +9,8 @@ use Shop\Entities\Shop;
 
 class ShopsController extends Controller
 {
+    protected $hidden = ['access_token', 'access_secret'];
+
     public function index(Request $request)
     {
         $query = $request->input('query', '');
